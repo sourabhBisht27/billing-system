@@ -1,16 +1,35 @@
 import mongoose, { Schema } from "mongoose";
 
 const ProductSchema = new Schema({
-    productName: string,
-    category: string,
-    codeSAC_HSN: string,
-    unitOfMeasure: string,
-    price: Number,
-    stalkValue: Number,
-    productUrl: string,
+    productName: {
+        type: String,
+        required: true,
+    },
+    category: {
+        type: String,
+    },
+    codeSAC_HSN: {
+        type: String,
+        required: true,
+    },
+    unitOfMeasure: {
+        type: String,
+        required: true,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    stockValue: {
+        type: Number,
+        required: true,
+    },
+    productUrl: {
+        type: String,
+        required: true,
+    },
 })
 
-const Product = new mongoose.model("Product", ProductSchema);
-module.exports = Product;
+const ProductModel = new mongoose.model("Product", ProductSchema);
+module.exports = ProductModel;
 
-// methods: GET POST PATCH DELETE

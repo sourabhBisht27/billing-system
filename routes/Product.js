@@ -1,3 +1,4 @@
 import express from "express";
-import * as ProductController from "../controllers/Products";
+import mongoose from "mongoose";
+import * as ProductController from "../controllers/product.controller";
 
